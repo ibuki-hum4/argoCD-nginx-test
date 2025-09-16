@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: ibuki-nginx
 spec:
+  ipFamilyPolicy: PreferDualStack
   selector:
     app: ibuki-nginx
   ports:
