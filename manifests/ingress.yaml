@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+  labels:
+    name: app-ingress
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: ibuki-test-nginx.uniproject.jp
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: ibuki-nginx
+                port:
+                  number: 80
